@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.5" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<welcome-file-list>
+	<welcome-file>home.jsp</welcome-file>
+	</welcome-file-list>
+
+	<!-- Servelets -->
+		<servlet>
+		<servlet-name>Queue</servlet-name>
+		<servlet-class>com.risedisplay.reports.queue.QueueServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Queue</servlet-name>
+		<url-pattern>/queue</url-pattern>
+	</servlet-mapping>
+	<security-constraint>
+		<web-resource-collection>
+			 <url-pattern>/queue</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>admin</role-name>
+		</auth-constraint>
+	</security-constraint>
+	<servlet>
+		<servlet-name>NSCustProfile</servlet-name>
+		<servlet-class>com.risedisplay.reports.servlets.NSCustProfileServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>NSCustProfile</servlet-name>
+		<url-pattern>/NSCustProfile</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>RiseProfileAppServletTest</servlet-name>
+		<servlet-class>com.risedisplay.reports.servlets.RiseProfileAppServletTest</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RiseProfileAppServletTest</servlet-name>
+		<url-pattern>/riseprofileappservlettest</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ImportCustomerRecords</servlet-name>
+		<servlet-class>com.risedisplay.reports.servlets.ImportCustomerRecords</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ImportCustomerRecords</servlet-name>
+		<url-pattern>/importCustomerRecords</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ExportCustomerRecordsServlet</servlet-name>
+		<servlet-class>com.risedisplay.reports.servlets.ExportCustomerRecordsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ExportCustomerRecordsServlet</servlet-name>
+		<url-pattern>/exportCustomerRecords</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Servelet For Appengine emails -->
+	<servlet>
+		<servlet-name>mailhandler</servlet-name>
+		<servlet-class>com.risedisplay.reports.servlets.MailHandlerServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>mailhandler</servlet-name>
+		<url-pattern>/_ah/mail/*</url-pattern>
+	</servlet-mapping>
+	<security-constraint>
+		<web-resource-collection>
+			<url-pattern>/_ah/mail/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>admin</role-name>
+		</auth-constraint>
+	</security-constraint>
+ <servlet>
+  <servlet-name>SystemServiceServlet</servlet-name>
+  <servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
+  <init-param>
+   <param-name>services</param-name>
+   <param-value/>
+  </init-param>
+ </servlet>
+ <servlet-mapping>
+  <servlet-name>SystemServiceServlet</servlet-name>
+  <url-pattern>/_ah/spi/*</url-pattern>
+ </servlet-mapping>
+</web-app>
