@@ -10,6 +10,11 @@
 <link
 	href="http://dev.sencha.com/deploy/ext-4.0.0//resources/css/ext-all.css"
 	rel="stylesheet" type="text/css" />
+<style type="text/css">
+	td div.x-grid-cell-inner {
+	white-space: normal;
+	}
+</style>	
 <script type="text/javascript">
 	Ext.onReady(function() {
 		var params = Ext.urlDecode(location.search.substring(1));
@@ -107,36 +112,36 @@
 				dataIndex:'customerName',
 				tpl : '{customerName}',
 				sortable: true,
-				//width : 100,
-				flex : 1
+				width : 100,
+				//flex : 1
 			}, {
 				text : 'Status',
 				xtype : 'templatecolumn',
 				dataIndex:'accountStatus',
 				tpl : '{accountStatus}',
 				sortable: true,
-				width : 100
+				width : 60
 			}, {
 				text : 'Sales Order',
 				//xtype : 'templatecolumn',
 				dataIndex:'salesOrder',
 				//tpl : '{salesOrder}',
 				sortable: true,
-				width : 150
+				width : 75
 			}, {
 				text : 'Type',
 				xtype : 'templatecolumn',
 				dataIndex:'type',
 				tpl : '{type}',
 				sortable: true,
-				width : 100
+				width : 70
 			}, {
 				text : 'Ship Date',
 				xtype : 'templatecolumn',
 				dataIndex:'shipDate',
 				tpl : '{shipDate}',
 				sortable: true,
-				width : 110
+				width : 75
 			}, {				
 				text : 'Item Description',
 				xtype : 'templatecolumn',
@@ -150,7 +155,7 @@
 				dataIndex:'itemQuantity',
 				tpl : '{itemQuantity}',
 				sortable: true,
-				width : 80
+				width : 78
 			},{
 				text : 'Warranty Type',
 				xtype : 'templatecolumn',
@@ -164,28 +169,27 @@
 				dataIndex:'warrantyStartDate',
 				tpl : '{warrantyStartDate}',
 				sortable: true,
-				width : 110
+				width : 105
 			},{
 				text : 'Warranty End Date',
 				xtype : 'templatecolumn',
 				dataIndex:'warrantyEndDate',
 				tpl : '{warrantyEndDate}',
 				sortable: true,
-				width : 110
 			},{
 				text : 'Item Notes',
 				xtype : 'templatecolumn',
 				dataIndex:'itemNotes',
 				tpl : '{itemNotes}',
 				sortable: true,
-				width : 100
+				width : 150
 			},{
 				text : 'Address',
 				xtype : 'templatecolumn',
 				dataIndex:'address',
 				tpl : '{address}',
 				sortable: true,
-				width : 100
+				width : 300
 			},{				
 				text : 'Internal ID',
 				xtype : 'templatecolumn',

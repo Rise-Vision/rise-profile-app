@@ -4,7 +4,7 @@
 	<application>riseprofileapp</application>
 	<!-- <application>riseprofiletestaap</application> -->
 	
-	<version>1-00-0016</version>
+	<version>1-00-0017</version>
 
 	<!-- Allows App Engine to send multiple requests to one instance in parallel: -->
 	<threadsafe>true</threadsafe>
